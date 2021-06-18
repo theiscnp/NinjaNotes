@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"></meta>
+
+	<title>Ninja Notes</title>
+
+	<meta name="description" content="An intelligent notes application as web-app using local data only." />
+	<meta name="author" content="Theis C. N. Pedersen, theischris@gmail.com" />
+	<meta name="robots" content="index" />
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Ninja Notes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<link rel="apple-touch-startup-image" href="assets/background/apple-touch-startup-image-750-1294.png" />
+
+	<!-- iPhone 6 -->
+	<link media="(device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" href="assets/background/apple-touch-startup-image-750-1294.png" />
+
+
+	<link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png" />
+
+	<link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon" />
+	<link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico" />
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<!-- <link rel="stylesheet" type="text/css" href="//back-end.ninja/assets/css/jsoneditor.min.css"> -->
+
+	<link rel="stylesheet" type="text/css" href="assets/plugins/FontAwesome/FontAwesome.css" />
+
+
+	<script type="text/javascript" src="assets/plugins/jQuery/jquery-3.4.0.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="assets/plugins/Jodit/build/jodit.min.css">
+
+	<script type="text/javascript" src="assets/plugins/Jodit/build/jodit.min.js"></script>
+
+
+	<link type="text/css" rel="stylesheet" href="assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+	<link type="text/css" rel="stylesheet" href="assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
+
+	<script type="text/javascript" src="assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="app_action_que.js" ></script>
+
+</head>
+<body>
+
+	<div class="welcome">
+		
+		<h2>Ninja Notes</h2>
+
+		<p><small><i>By the@back-end.ninja</i></small></p>
+
+		<p>Aspirational notes application<br />Built on these primary principles:</p>
+		<ul>
+			<li>Old-fashion just text</li>
+			<li>Smart UI</li>
+			<li>Better than the standard Mac Notes app</li>
+			<li>Secure storage on your pc</li>
+			<li>Easy to use back-up solutions</li>
+			<li>Works off-line</li>
+		</ul>
+
+		<br />
+
+		<a href="#" class="btn app-start">Start <i class="fa fa-angle-double-right" style="font-weight:bold;"></i></a>
+
+	</div>
+
+
+	<div class="app">
+
+		<div class="sidebar-left"></div>
+		
+		<div class="menu">
+
+			<div class="item sidebar-toggle-left"> <i class="fa fa-fw fa-bars"></i> </div>
+
+			<div class="item create-new-note"> <i class="fa fa-fw fa-plus"></i> </div>
+
+			<div class="item right sidebar-toggle-right"> <i class="fa fa-fw fa-bars"></i> </div>
+
+			<div class="item-with-submenu right" tabindex="0">
+
+				<div class="item menu-more"> <i class="fa fa-fw fa-ellipsis-v"></i> </div>
+
+				<div class="submenu">
+					<div class="submenu-item goto-data-sync">Sync?</div>
+					<!--<div class="submenu-item goto-settings">Settings</div>-->
+					<!--<div class="submenu-item">My info</div>-->
+					<div class="submenu-item goto-layer-welcome">About this app</div>
+				</div>
+
+			</div>
+
+			<div class="item right search-dialog-toggle"> <i class="fa fa-fw fa-search"></i> </div>
+
+		</div>
+
+
+		<textarea class="jodit_container"></textarea>
+
+
+		<div class="sidebar-right">
+
+
+		</div>
+
+	</div>
+
+
+	<div class="settings">
+		
+		<h2>Settings</h2>
+
+		<div class="settings-fields">
+
+			<label> Type-save-delay
+
+				<input name="type_save_delay" type="number" val="1000" />
+			</label>
+
+			<label> Back-up online
+
+				<input name="back_up_online" type="checkbox" val="true" />
+			</label>
+
+			<label> Back-up / download to local storage
+
+				<div class="btn download-back-up"></div>
+			</label>
+
+		</div>
+
+		<br />
+
+		<a href="#" class="btn settings-cancel">Cancel</a>
+
+		<a href="#" class="btn settings-save">Save</a>
+
+	</div>
+
+
+
+
+	<div class="sync-settings">
+		
+		<h2>Synchronize across devices/browsers</h2>
+
+		<div class="accept-agreement">
+
+			<p>
+				To enable synchronization, we must have an agreement about how the data is going to be tranferred.
+			</p>
+			<p>
+				If you decide to accept, synchronizing your data across devices/browsers, it entales that; the server of this app, acts as the mediator to have the latest copy of your notes on each devices, in order to merge and serve to each other browser that you choose.<br />
+
+				I, Theis C. N. Pedersen, can - as the sole developer, responsible and only person with access to the code and workings of this application and service - guarantee the safety of your data, end-to-end encrypting it and handling it with care and respect.<br />
+				The system does not keep any historical copy of your data (unless if you explicitly ask us to back-up your data in such a future feature of this app/system).<br />
+				Your data will always belong to (be copyright'ed by) you.<br />
+			</p>
+
+			<label> Back-up / download to local storage
+
+				<div class="btn download-back-up"></div>
+			</label>
+
+		</div>
+
+		<br />
+
+		<a href="#" class="btn settings-cancel">Cancel</a>
+
+		<a href="#" class="btn settings-save">Save</a>
+
+	</div>
+
+
+
+	<div class="error_message"></div>
+
+
+	<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
